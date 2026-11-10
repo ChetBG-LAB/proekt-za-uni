@@ -17,8 +17,11 @@ services:
       timeout: 5s
       retries: 10
 
+  
   web:
     build: .
+    ports:
+      - "5000:5000"
     restart: unless-stopped
     environment:
       DB_HOST: db
@@ -29,6 +32,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
 
 volumes:
   postgres_data:

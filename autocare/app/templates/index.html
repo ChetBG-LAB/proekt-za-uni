@@ -4,32 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoCare - Автосервиз</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f4f6f9;
+            color: #222;
+        }
+
+        header {
+            background: #1f3b57;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        nav {
+            margin: 25px 0;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 10px 5px 0;
+            padding: 12px 18px;
+            background: #1769aa;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #124d7c;
+        }
+
+        main {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 25px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>AutoCare</h1>
         <p>Система за управление на автосервиз</p>
     </header>
 
+    <nav>
+        <a href="/customers">Клиенти</a>
+        <a href="/vehicles">Автомобили</a>
+        <a href="/services">Услуги</a>
+        <a href="/appointments">Часове</a>
+        <a href="/repairs">Ремонти</a>
+    </nav>
+
     <main>
         <h2>Добре дошли в AutoCare!</h2>
-        <p>Управлявайте лесно клиентите, автомобилите,
-        услугите и ремонтите на вашия автосервиз.</p>
 
-        <section>
-            <h3>Функционалности</h3>
-            <ul>
-                <li>Управление на клиенти</li>
-                <li>Управление на автомобили</li>
-                <li>Управление на услуги</li>
-                <li>Записване на часове</li>
-                <li>Управление на ремонти</li>
-            </ul>
-        </section>
+        <p>
+            Управлявайте лесно клиентите, автомобилите,
+            услугите, часовете и ремонтите на вашия автосервиз.
+        </p>
+
+        <h3>Функционалности</h3>
+        <ul>
+            <li>Управление на клиенти</li>
+            <li>Управление на автомобили</li>
+            <li>Управление на услуги</li>
+            <li>Записване на часове</li>
+            <li>Управление на ремонти</li>
+        </ul>
     </main>
 
     <footer>
         <p>AutoCare Management System</p>
     </footer>
+
 </body>
 </html>
