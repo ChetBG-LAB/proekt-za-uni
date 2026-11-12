@@ -1,0 +1,103 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900">
+  <defs>
+    <style>
+      .class-box { fill: #ffffff; stroke: #263b55; stroke-width: 2; }
+      .class-title { fill: #dceafe; stroke: #263b55; stroke-width: 2; }
+      .name { font: bold 19px Arial, sans-serif; fill: #172b4d; }
+      .field { font: 15px Arial, sans-serif; fill: #263238; }
+      .relation { stroke: #34495e; stroke-width: 2; fill: none; }
+      .mult { font: bold 14px Arial, sans-serif; fill: #172b4d; }
+      .heading { font: bold 25px Arial, sans-serif; fill: #172b4d; }
+    </style>
+  </defs>
+
+  <text x="550" y="38" text-anchor="middle" class="heading">AutoCare — UML Class Diagram</text>
+
+  <!-- Customer -->
+  <rect x="40" y="90" width="290" height="190" rx="5" class="class-box"/>
+  <rect x="40" y="90" width="290" height="38" class="class-title"/>
+  <text x="185" y="116" text-anchor="middle" class="name">Customer</text>
+  <text x="55" y="153" class="field">+ id: Integer</text>
+  <text x="55" y="176" class="field">+ first_name: String</text>
+  <text x="55" y="199" class="field">+ last_name: String</text>
+  <text x="55" y="222" class="field">+ email: String</text>
+  <text x="55" y="245" class="field">+ phone: String</text>
+  <text x="55" y="268" class="field">+ created_at: Timestamp</text>
+
+  <!-- Vehicle -->
+  <rect x="410" y="90" width="290" height="190" rx="5" class="class-box"/>
+  <rect x="410" y="90" width="290" height="38" class="class-title"/>
+  <text x="555" y="116" text-anchor="middle" class="name">Vehicle</text>
+  <text x="425" y="153" class="field">+ id: Integer</text>
+  <text x="425" y="176" class="field">+ customer_id: Integer</text>
+  <text x="425" y="199" class="field">+ brand: String</text>
+  <text x="425" y="222" class="field">+ model: String</text>
+  <text x="425" y="245" class="field">+ registration_number: String</text>
+  <text x="425" y="268" class="field">+ year: Integer</text>
+
+  <!-- Service -->
+  <rect x="770" y="90" width="290" height="190" rx="5" class="class-box"/>
+  <rect x="770" y="90" width="290" height="38" class="class-title"/>
+  <text x="915" y="116" text-anchor="middle" class="name">Service</text>
+  <text x="785" y="153" class="field">+ id: Integer</text>
+  <text x="785" y="176" class="field">+ name: String</text>
+  <text x="785" y="199" class="field">+ description: Text</text>
+  <text x="785" y="222" class="field">+ price: Decimal</text>
+  <text x="785" y="245" class="field">+ duration_minutes: Integer</text>
+
+  <!-- Appointment -->
+  <rect x="410" y="390" width="310" height="205" rx="5" class="class-box"/>
+  <rect x="410" y="390" width="310" height="38" class="class-title"/>
+  <text x="565" y="416" text-anchor="middle" class="name">Appointment</text>
+  <text x="425" y="453" class="field">+ id: Integer</text>
+  <text x="425" y="476" class="field">+ vehicle_id: Integer</text>
+  <text x="425" y="499" class="field">+ service_id: Integer</text>
+  <text x="425" y="522" class="field">+ appointment_date: Timestamp</text>
+  <text x="425" y="545" class="field">+ status: String</text>
+  <text x="425" y="568" class="field">+ notes: Text</text>
+
+  <!-- Repair -->
+  <rect x="410" y="700" width="310" height="170" rx="5" class="class-box"/>
+  <rect x="410" y="700" width="310" height="38" class="class-title"/>
+  <text x="565" y="726" text-anchor="middle" class="name">Repair</text>
+  <text x="425" y="763" class="field">+ id: Integer</text>
+  <text x="425" y="786" class="field">+ appointment_id: Integer</text>
+  <text x="425" y="809" class="field">+ description: Text</text>
+  <text x="425" y="832" class="field">+ cost: Decimal</text>
+  <text x="425" y="855" class="field">+ status: String</text>
+
+  <!-- Review -->
+  <rect x="40" y="390" width="290" height="145" rx="5" class="class-box"/>
+  <rect x="40" y="390" width="290" height="38" class="class-title"/>
+  <text x="185" y="416" text-anchor="middle" class="name">Review</text>
+  <text x="55" y="453" class="field">+ id: Integer</text>
+  <text x="55" y="476" class="field">+ customer_id: Integer</text>
+  <text x="55" y="499" class="field">+ rating: Integer (1–5)</text>
+  <text x="55" y="522" class="field">+ comment: Text</text>
+
+  <!-- Customer to Vehicle -->
+  <path d="M330 185 H410" class="relation"/>
+  <text x="337" y="174" class="mult">1</text>
+  <text x="390" y="174" class="mult">0..*</text>
+
+  <!-- Vehicle to Appointment -->
+  <path d="M555 280 V390" class="relation"/>
+  <text x="565" y="298" class="mult">1</text>
+  <text x="565" y="380" class="mult">0..*</text>
+
+  <!-- Service to Appointment -->
+  <path d="M915 280 V330 H720 V455" class="relation"/>
+  <text x="925" y="298" class="mult">1</text>
+  <text x="735" y="445" class="mult">0..*</text>
+
+  <!-- Appointment to Repair -->
+  <path d="M565 595 V700" class="relation"/>
+  <text x="575" y="615" class="mult">1</text>
+  <text x="575" y="690" class="mult">0..*</text>
+
+  <!-- Customer to Review -->
+  <path d="M185 280 V335 H185 V390" class="relation"/>
+  <text x="195" y="300" class="mult">1</text>
+  <text x="195" y="380" class="mult">0..*</text>
+</svg>

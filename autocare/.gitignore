@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 .DS_Store
 .pytest_cache/
+
+# SSL private keys
+/nginx/certs/*.key
+
+# Backup files
+/compose.yaml.bak
