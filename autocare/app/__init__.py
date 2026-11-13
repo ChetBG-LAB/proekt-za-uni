@@ -27,9 +27,7 @@ def create_app():
     def health():
         return {"status": "ok"}, 200
 
-    # =========================
     # КЛИЕНТИ
-    # =========================
 
     @app.route("/customers")
     def customers():
@@ -138,9 +136,7 @@ def create_app():
 
         return redirect(url_for("customers"))
 
-    # =========================
     # АВТОМОБИЛИ
-    # =========================
 
     @app.route("/vehicles")
     def vehicles():
@@ -269,9 +265,7 @@ def create_app():
 
         return redirect(url_for("vehicles"))
 
-    # =========================
     # СЕРВИЗНИ УСЛУГИ
-    # =========================
 
     @app.route("/services")
     def services():
@@ -393,9 +387,7 @@ def create_app():
         return redirect(url_for("services"))
 
    
-    # =========================
     # ЗАПИСВАНЕ НА ЧАСОВЕ
-    # =========================
 
     @app.route("/appointments")
     def appointments():
@@ -577,9 +569,7 @@ def create_app():
 
         return redirect(url_for("appointments"))
 
-       # =========================
     # УПРАВЛЕНИЕ НА РЕМОНТИ
-    # =========================
 
     @app.route("/repairs")
     def repairs():
